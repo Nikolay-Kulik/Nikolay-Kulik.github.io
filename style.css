@@ -1,0 +1,305 @@
+:root {
+    --color-oneLight: rgb(94, 190, 94);
+    --color-oneDark: rgb(7, 67, 7);
+    --color-twoLight: rgb(227, 172, 84);
+    --color-twoDark: rgb(128, 57, 7);
+    --color-background: rgba(121, 127, 138, 0.543);
+    --color-menuFocusOne: rgb(124, 225, 161);
+    --color-menuFocusTwo: rgb(225, 203, 124);
+    --color-description: rgba(250, 246, 246, 0.788);
+}
+
+.conteiner {
+    width: 850px;
+    height: 465px;
+    margin: auto;
+    background-color: var(--color-background);
+    user-select: none
+}
+
+h1 {
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    word-spacing: 30px;     
+}
+
+.wrap {
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+    margin: auto;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: 0;
+    padding-left: 0;   
+}
+
+.currency {
+    font-weight: 900;
+    color: var(--color-oneDark)
+}
+.keyNum {
+    font-size: 25px;
+    font-weight: 900;
+    color: var(--color-description);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* смена подсказок */
+.keyNum1 {
+    visibility: visible;
+       
+}
+.keyNum2 {
+    position: relative;
+    top: -61px;
+    visibility: hidden;
+}
+/* перевод */
+h1::after {
+    content: 'Length and distance converter';
+}
+h1:hover::after {
+    content: 'Длины и расстояния конвертер';
+}
+.centimeters::after {
+    content: 'Centimeters (cm)';
+}
+#Cm:hover .centimeters::after, #Cm2:hover .centimeters::after {
+    content: 'Сантиметры';    
+}
+
+.meters::after {
+    content: 'Meters (m)';
+}
+#M:hover .meters::after, #M2:hover .meters::after {
+    content: 'Метры';    
+}
+
+.inches::after {
+    content: 'Inches (in)';
+}
+#In:hover .inches::after, #In2:hover .inches::after {
+    content: 'Дюймы';    
+}
+
+
+.feets::after {
+    content: 'Feets (ft)';
+}
+#Ft:hover .feets::after, #Ft2:hover .feets::after {
+    content: 'Футы';
+}
+
+
+.select::after {
+    content: 'Select';
+}
+.select:hover::after {
+    content: 'Выбор';
+}
+.cancel::after {
+    content: 'Cancel';
+}
+.cancel:hover::after {
+    content: 'Отмена';
+}
+
+.hint {
+    display: none;
+    text-align: center;
+}
+.description::before {
+    content: 'press the button "arrow" on the keyboard';
+    margin: auto auto;
+    padding: auto;   
+    letter-spacing: 1px;
+    color: var(--color-description);
+
+}
+.description:hover::before {
+    content: 'нажмите кнопку "стрелка" на клавиатуре';
+}
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 22px solid transparent;
+    border-right: 22px solid transparent;
+    border-bottom: 36px solid var(--color-description);
+}
+.arrowRight {
+    transform: rotate(90deg);      
+}
+.arrowLeft { 
+    transform: rotate(-90deg); 
+}
+.arrowDown {
+    transform: rotate(180deg); 
+    
+}
+.two {
+    color: var(--color-twoDark)
+}
+
+p {
+    height: 100%;
+    margin: auto;
+    padding: 0 10px;
+    font-size: 25px;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+}
+.two__list li {
+    /* border: 1px solid firebrick; */
+    padding: 0 10px;
+    font-size: 25px;
+    text-align: center;
+    display: grid;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.two__list label {
+    position: relative;
+    top: 15px;
+}
+
+.select__button {
+    width: 300px;
+    font-size: 20px;
+    font-weight: 900;
+    background-color: var(--color-oneLight);
+    color: var(--color-oneDark);
+    border: 3px solid var(--color-oneDark);
+}
+.two__button {
+    background-color: var(--color-twoLight);
+    color: var(--color-twoDark);
+    border: 3px solid var(--color-twoDark);
+}
+
+/* смена кнопок */
+.one._active .one__list {
+    display: block;
+}
+
+.one._active .one__button span:first-child {
+    display: none;
+}
+
+.one._active .one__button span:last-child {
+    display: block;
+}
+
+.one__button span:first-child {
+    display: block;
+}
+
+.one__button span:last-child {
+    display: none;
+}
+
+.two._active .two__list {
+    display: block;
+}
+
+.two._active .two__button span:first-child {
+    display: none;
+}
+
+.two._active .two__button span:last-child {
+    display: block;
+}
+
+.two__button span:first-child {
+    display: block;
+}
+
+.two__button span:last-child {
+    display: none;
+}
+
+.select__list {
+    position: absolute;
+
+}
+
+/* смена цвета при наведении */
+.select__list li {
+    width: 300px;
+    height: 60px;
+    background-color: var(--color-oneLight);
+    padding: 0.5px;
+    transition: 3s cubic-bezier(0.075, 0.82, 0.165, 1);  
+}
+.two__list li {
+    background-color: var(--color-twoLight);
+}
+.one__list li:hover {
+    background-color: var(--color-menuFocusOne);
+}
+.two__list li:hover {
+    background-color: var(--color-menuFocusTwo);
+}
+
+/* активация ввода при клике */
+.one__list li._active p {
+    height: 45%;
+    grid-template-columns: 1fr;
+}
+
+.input {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+
+}
+.number {
+    font-size: 25px;   
+}
+.select__list li._active label {
+    height: 45%;
+    font-size: 20px;
+    top: 0;
+}
+
+
+/* в общем списке - только название единицы */
+.select__list span {
+    display: none;
+}
+.select__list li._active span {
+    display: block;
+}
+
+/* стрелки */
+.arrowBack {
+    position: relative;
+    left: -32px;
+    top: -17px;
+    border: 20px solid transparent;
+    pointer-events: none;  
+}
+.arrowBack._active {
+    border-right: 35px solid var(--color-oneDark);
+    pointer-events: all;
+}
+.arrowStep {
+    position: relative;
+    left: 32px;
+    top: -17px;
+    border: 20px solid transparent;
+    border-left: 35px solid var(--color-oneDark);      
+}
