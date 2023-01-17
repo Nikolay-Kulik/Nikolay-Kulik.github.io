@@ -3,4 +3,4 @@
 - CSS
 - HTML
 
-тестовый [проект](nikolay-kulik.github.io/)
+тестовый [проект](https://nikolay-kulik.github.io/)
